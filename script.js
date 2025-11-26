@@ -17,5 +17,7 @@ function addOption(option) {
 
 // function vote
 function vote(voteOption, voterId) {
-  
+  if(!poll.has(voteOption)) {
+    return `Option "${voteOption}" does not exist.`
+  }
 };
