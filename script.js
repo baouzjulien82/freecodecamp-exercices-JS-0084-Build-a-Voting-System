@@ -2,16 +2,16 @@
 const poll = new Map();
 
 // function d'ajout de l'option de vote
-function addOption(voteOption) {
-  if (!voteOption) {
+function addOption(option) {
+  if (!option) {
     return "Option cannot be empty.";
   }
-  if (!poll.has(voteOption)) {
+  if (!poll.has(option)) {
     const votersSet = new Set();
-    poll.set(voteOption, votersSet);
-    return `Option "${voteOption}" added to the poll.`;
+    poll.set(option, votersSet);
+    return `Option "${option}" added to the poll.`;
   } else {
-    return `Option "${voteOption}" already exists.`;
+    return `Option "${option}" already exists.`;
   }
 }
 
@@ -38,6 +38,10 @@ addOption('Michel');
 vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
+vote('Jacques', 'didier');
+vote('Michel', 'roger');
+vote('Jean Marie', 'julien');
+vote('Jean Marie', 'julien');
 
 // foncton d’affichage des resultats
 function displayResults() {
@@ -45,7 +49,7 @@ function displayResults() {
   poll.forEach((votersSet, option) => {
     resultString += `${option}: ${votersSet.size} votes\n`;
   });
-  return resultString;
+  return resultString.trim();
 }
 
 console.log(displayResults());
