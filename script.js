@@ -3,29 +3,28 @@ const poll = new Map();
 
 // function d'ajout de l'option de vote
 function addOption(voteOption) {
-  if(!voteOption) {
-    return "Option cannot be empty."
-  };
-  if(!poll.has(voteOption)) {
+  if (!voteOption) {
+    return "Option cannot be empty.";
+  }
+  if (!poll.has(voteOption)) {
     const votersSet = new Set();
-    poll.add(voteOption, votersSet)
-    return `Option "${voteOption}" added to the poll.`
-  }else {
-    return `Option "${voteOption}" already exists.`
-  };
-};
+    poll.set(voteOption, votersSet);
+    return `Option "${voteOption}" added to the poll.`;
+  } else {
+    return `Option "${voteOption}" already exists.`;
+  }
+}
 
 // function vote
 function vote(option, voterId) {
-  if(!poll.has(option)) {
-    return `Option "${option}" does not exist.`
+  if (!poll.has(option)) {
+    return `Option "${option}" does not exist.`;
   }
-  if() {
-
-    return `Voter ${voterId} has already voted for "${option}".`
+  const votersSet = poll.get(option);
+  if (votersSet.has(voterId)) {
+    return `Voter ${voterId} has already voted for "${option}".`;
   } else {
-
-    return `Voter ${voterId} voted for "${option}".`
+    votersSet.add(voterId);
+    return `Voter ${voterId} voted for "${option}".`;
   }
-  
-};
+}
