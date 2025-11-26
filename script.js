@@ -2,22 +2,24 @@
 const poll = new Map();
 
 // function d'ajout de l'option de vote
-function addOption(option) {
-  if(!option) {
+function addOption(voteOption) {
+  if(!voteOption) {
     return "Option cannot be empty."
   };
-  if(!poll.has(option)) {
-    const initSet = new Set();
-    poll.add(option, initSet)
-    return `Option "${option}" added to the poll.`
+  if(!poll.has(voteOption)) {
+    const votersSet = new Set();
+    poll.add(voteOption, votersSet)
+    return `Option "${voteOption}" added to the poll.`
   }else {
-    return `Option "${option}" already exists.`
+    return `Option "${voteOption}" already exists.`
   };
 };
 
 // function vote
-function vote(voteOption, voterId) {
-  if(!poll.has(voteOption)) {
-    return `Option "${voteOption}" does not exist.`
+function vote(option, voterId) {
+  if(!poll.has(option)) {
+    return `Option "${option}" does not exist.`
+  } else {
+    
   }
 };
