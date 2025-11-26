@@ -1,7 +1,7 @@
 // initialisation de l'objet Map
 const poll = new Map();
 
-// function d'ajout a l'objet Map "poll"
+// function d'ajout de l'option de vote
 function addOption(option) {
   if(!option) {
     return "Option cannot be empty."
@@ -16,6 +16,6 @@ function addOption(option) {
 };
 
 // function vote
-function vote() {
-
+function vote(voteOption, voterId) {
+  
 };
