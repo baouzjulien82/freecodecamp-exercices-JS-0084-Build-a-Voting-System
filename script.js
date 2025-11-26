@@ -38,9 +38,9 @@ vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 
 function displayResults() {
-  const resultString="'resultat des votes: \n'";
+  const resultString="'Poll Results:\n'";
   poll.forEach(option => {
-  resultString.push(`option ${} $ {} votes\n `)
+  resultString.push(`${poll.key} ${poll.value.length} votes\n `)
 })
   return resultString
 }
