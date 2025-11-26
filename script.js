@@ -29,14 +29,17 @@ function vote(option, voterId) {
   }
 }
 
+// ajout d’options
 addOption('Jean Marie');
 addOption('Jacques');
 addOption('Michel');
 
+// ajout de votes
 vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 
+// foncton d’affichage des resultats
 function displayResults() {
   let resultString = "Poll Results:\n";
   poll.forEach((votersSet, option) => {
