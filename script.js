@@ -28,3 +28,17 @@ function vote(option, voterId) {
     return `Voter ${voterId} voted for "${option}".`;
   }
 }
+
+addOption('Jean Marie');
+addOption('Jacques');
+addOption('Michel');
+
+vote('Jean Marie', 'julien');
+vote('Jean Marie', 'julien');
+vote('Jean Marie', 'julien');
+
+function displayResults() {
+  console.log(poll);
+}
+
+displayResults();
