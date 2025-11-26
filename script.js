@@ -19,7 +19,13 @@ function addOption(voteOption) {
 function vote(option, voterId) {
   if(!poll.has(option)) {
     return `Option "${option}" does not exist.`
-  } else {
-    
   }
+  if() {
+
+    return `Voter ${voterId} has already voted for "${option}".`
+  } else {
+
+    return `Voter ${voterId} voted for "${option}".`
+  }
+  
 };
