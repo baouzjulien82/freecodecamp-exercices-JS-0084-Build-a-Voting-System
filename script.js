@@ -38,11 +38,11 @@ vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 
 function displayResults() {
-  const resultString="'Poll Results:\n'";
-  poll.forEach(option => {
-  resultString.push(`${poll.key} ${poll.value.length} votes\n `)
-})
-  return resultString
+  let resultString = "Poll Results:\n";
+  poll.forEach((votersSet, option) => {
+    resultString += `${option}: ${votersSet.size} votes\n`;
+  });
+  return resultString;
 }
 
-displayResults();
+console.log(displayResults());
