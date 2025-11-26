@@ -38,7 +38,9 @@ vote('Jean Marie', 'julien');
 vote('Jean Marie', 'julien');
 
 function displayResults() {
-  console.log(poll);
+  poll.forEach(option => {
+
+})
 }
 
 displayResults();
